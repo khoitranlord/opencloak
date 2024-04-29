@@ -20,6 +20,30 @@ type HttpServer struct {
 	app     *http.Server
 }
 
+func New(options ...Optioner) *HttpServer {
+	configs := &HttpServerConfigs{}
+	for _, option := range options {
+		option(configs)
+	}
+	app := gin.New()
+
+	if len(configs.middlewares) > 0 {
+		for _, middleware := range configs.middlewares {
+			app.Use(middleware)
+		}
+	}
+	configs.registration(app)
+
+	httpServer := &http.Server{
+		Handler: app,
+	}
+
+	return &HttpServer{
+		app:     httpServer,
+		configs: configs,
+	}
+}
+
 type HttpServerConfigs struct {
 	configs      *configs.HttpConfigs
 	registration RegistrationFunc
