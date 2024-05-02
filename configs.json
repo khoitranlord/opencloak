@@ -3,16 +3,16 @@
       "port": 9000,
       "name": "public_api",
       "tls": {
-        "cert": "certs/cert.pem",
-        "key": "certs/key.pem"
+        "cert": "src/certs/cert.pem",
+        "key": "src/certs/key.pem"
       }
     },
     "private": {
       "port": 9001,
       "name": "private_api",
       "tls": {
-        "cert": "certs/cert.pem",
-        "key": "certs/key.pem"
+        "cert": "src/certs/cert.pem",
+        "key": "src/certs/key.pem"
       },
       "auth": {
         "username": "dev",
@@ -24,6 +24,6 @@
       "encoding": "console"
     },
     "database": {
-      "connection": "user=postgres password=local dbname=opencloak host=localhost port=5432 sslmode=require"
+      "connection": "user=postgres password=12345678 dbname=opencloak host=localhost port=5432 sslmode=disable"
     }
   }

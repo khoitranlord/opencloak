@@ -7,6 +7,7 @@ import (
 	"github.com/khoitranlord/opencloak/src/internal/configs"
 	custpg "github.com/khoitranlord/opencloak/src/internal/db/postgres"
 	"github.com/khoitranlord/opencloak/src/internal/logger"
+	_ "github.com/lib/pq"
 	"go.uber.org/zap"
 	"gorm.io/gorm"
 )

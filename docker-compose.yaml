@@ -4,7 +4,8 @@ services:
    image: postgres
    restart: always
    environment:
-    POSTGRES_DB: postgres
+    POSTGRES_USER: postgres
+    POSTGRES_DB: opencloak
     POSTGRES_PASSWORD: 12345678
    ports:
    - '5432:5432'

@@ -66,7 +66,7 @@ func WithGlobalConfigs(conf *configs.HttpConfigs) Optioner {
 	}
 }
 
-func WithRegistation(handler RegistrationFunc) Optioner {
+func WithRegistration(handler RegistrationFunc) Optioner {
 	return func(configs *HttpServerConfigs) {
 		configs.registration = handler
 	}
